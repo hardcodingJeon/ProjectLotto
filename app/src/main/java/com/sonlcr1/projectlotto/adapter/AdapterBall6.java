@@ -35,7 +35,7 @@ public class AdapterBall6 extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         VH vh = (VH)holder;
-        vh.tv.setText(num.get(position));
+        vh.tv.setText(num.get(position)+"");
     }
 
     @Override
