@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 
 import com.sonlcr1.projectlotto.adapter.AdapterBall6;
 
@@ -15,8 +17,8 @@ import java.util.Random;
 
 public class Ball_6 extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    AdapterBall6 adapter;
+    GridView gridView;
+    ArrayAdapter arrayAdapter;
     ArrayList<Integer> num = new ArrayList<>();
     int result;
 
@@ -25,12 +27,28 @@ public class Ball_6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ball_6);
 
-        recyclerView = findViewById(R.id.recycler);
-        adapter = new AdapterBall6(this,num);
-        recyclerView.setAdapter(adapter);
+//        num.add(1);
+//        num.add(2);
+//        num.add(3);
+//        num.add(4);
+//        num.add(5);
+//        num.add(6);
+//        num.add(7);
+//        num.add(8);
+//        num.add(9);
+//        num.add(10);
+//        num.add(11);
+//        num.add(12);
+//        num.add(13);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 6);
-        recyclerView.setLayoutManager(gridLayoutManager);
+
+
+
+
+        gridView = findViewById(R.id.gridview);
+        arrayAdapter = new ArrayAdapter(this,R.layout.aaa,num);
+
+        gridView.setAdapter(arrayAdapter);
     }
 
     public void clickRandom(View view) {
@@ -38,19 +56,31 @@ public class Ball_6 extends AppCompatActivity {
         Random rnd = new Random();
         Log.e("tag",num.size()+"");
         result = ((num.size())/6)*6;
-        //todo : 6개 랜덤이 출력되고 다음줄 출력이 안됨
-        for(int i=result;i<result+6;i++) {
+
+//        for(int i=result;i<result+6;i++) {
+//            int n = rnd.nextInt(45)+1;
+//            num.add(i,n);
+//            for(int j=result;j<i;j++) {
+//                if(num.get(i)==num.get(j)) {
+//                    j=0;
+//                    n = rnd.nextInt(45)+1;
+//                    num.add(i,n);
+//                }
+//            }
+//        }
+        //todo : 같은 숫자 출력됨
+        for(int i=0;i<6;i++) {
             int n = rnd.nextInt(45)+1;
-            num.add(i,n);
-            for(int j=result;j<i;j++) {
+            num.add(n);
+            for(int j=0;j<i;j++) {
                 if(num.get(i)==num.get(j)) {
                     j=0;
                     n = rnd.nextInt(45)+1;
-                    num.add(i,n);
+                    num.add(num.size()-1,n);
                 }
             }
         }
-        adapter.notifyDataSetChanged();
+        arrayAdapter.notifyDataSetChanged();
 
     }
 }
