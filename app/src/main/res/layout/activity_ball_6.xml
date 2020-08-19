@@ -7,13 +7,21 @@
     android:padding="15dp"
     tools:context=".Ball_6">
 
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <GridView
         android:id="@+id/gridview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/listview"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/listview"
         android:numColumns="6"/>
 
 
