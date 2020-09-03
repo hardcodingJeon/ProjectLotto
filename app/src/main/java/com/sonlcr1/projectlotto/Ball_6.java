@@ -1,16 +1,27 @@
 package com.sonlcr1.projectlotto;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
 import android.widget.GridView;
+
+import com.sonlcr1.projectlotto.adapter.AdapterBall;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Ball_6 extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    AdapterBall adapterBall;
 
     GridView gridView;
     ArrayAdapter arrayAdapter;
@@ -23,10 +34,21 @@ public class Ball_6 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ball_6);
 
-        gridView = findViewById(R.id.gridview);
-        arrayAdapter = new ArrayAdapter(this,R.layout.random_num,num);
 
-        gridView.setAdapter(arrayAdapter);
+        Log.e("tag",num.size()+"");
+
+        recyclerView = findViewById(R.id.recycle);
+        adapterBall = new AdapterBall(this,num);
+
+
+
+        recyclerView.setAdapter(adapterBall);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,6));
+
+
+//        gridView = findViewById(R.id.gridview);
+//        arrayAdapter = new ArrayAdapter(this,R.layout.random_num,num);
+//        gridView.setAdapter(arrayAdapter);
     }
 
     public void clickRandom(View view) {
@@ -47,8 +69,10 @@ public class Ball_6 extends AppCompatActivity {
                 }
                 j++;
             }
+            adapterBall.notifyItemInserted(size+i);
+//            adapterBall.notifyDataSetChanged();
         }
-        arrayAdapter.notifyDataSetChanged();
+//        arrayAdapter.notifyDataSetChanged();
 
     }
 }

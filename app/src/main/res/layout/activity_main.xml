@@ -11,30 +11,33 @@
         android:id="@+id/btn_all"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/aaa"
+        android:onClick="clickAll"
         android:text="6개 숫자 랜덤 뽑기"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#33000000"
+        app:layout_constraintBottom_toTopOf="@+id/btn_onepick"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="clickAll"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_onepick"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/aaa"
+        android:onClick="clickOne"
         android:text="숫자 하나씩 랜덤 뽑기"
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#33000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_all"
-        android:onClick="clickOne"/>
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -51,6 +54,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#B3000000"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="151dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/aaa"
+        android:text="1등 번호 확인"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#33000000"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_onepick"
+        android:onClick="clickCheck"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

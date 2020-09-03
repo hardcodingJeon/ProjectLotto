@@ -14,12 +14,12 @@ import com.sonlcr1.projectlotto.R;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
-public class AdapterBall6 extends RecyclerView.Adapter {
+public class AdapterBall extends RecyclerView.Adapter {
 
     Context context;
     ArrayList<Integer> num;
 
-    public AdapterBall6(Context context, ArrayList<Integer> num) {
+    public AdapterBall(Context context, ArrayList<Integer> num) {
         this.context = context;
         this.num = num;
     }

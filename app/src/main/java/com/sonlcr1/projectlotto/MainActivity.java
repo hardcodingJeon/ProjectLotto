@@ -3,6 +3,7 @@ package com.sonlcr1.projectlotto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,5 +26,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickOne(View view) {
+        Intent intent = new Intent(this, Ball_1.class);
+        startActivity(intent);
+    }
+
+    public void clickCheck(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.dhlottery.co.kr/gameResult.do?method=byWin"));
+        startActivity(intent);
     }
 }
