@@ -73,4 +73,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_onepick"
         android:onClick="clickCheck"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-9406339972957738/8183943943"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <!-- ca-app-pub-3940256099942544/6300978111 테스트용 광고 id -->
+    <!-- ca-app-pub-9406339972957738/8183943943 배포용 광고 id -->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
